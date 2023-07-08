@@ -6,3 +6,18 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+/* Using universal selector * for reset, border-box (borders and paddings don't added to the total width/hight of element ) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* everything related to the font specify in the body */
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+}
