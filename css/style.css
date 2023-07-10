@@ -8,29 +8,29 @@ Dark green: #28b485
 */
 
 /* Using universal selector * for reset, border-box (borders and paddings don't added to the total width/hight of element ) */
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
+
+html {
+  font-size: 62.5%;
+}
+
 /* everything related to the font specify in the body */
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
 
-  padding: 30px;
-}
+  padding: 3rem;
 
-.text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  text-align: center;
+  box-sizing: border-box;
 }
 
 .header {
@@ -42,14 +42,23 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }
 
-.logo-box {
+.header__text-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
 }
 
-.logo-box img {
-  height: 35px;
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.header__logo {
+  height: 3.5rem;
 }
 
 .heading-primary {
@@ -58,25 +67,25 @@ body {
 
   backface-visibility: hidden;
 
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
 
   animation: moveToLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 600;
-  letter-spacing: 17.4px;
+  letter-spacing: 1.75rem;
 
   animation: moveToRight;
   animation-duration: 1s;
@@ -88,11 +97,11 @@ body {
 @keyframes moveToLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
 
   80% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
 
   100% {
@@ -104,11 +113,11 @@ body {
 @keyframes moveToRight {
   0% {
     opacity: 0;
-    transform: translate(100px);
+    transform: translate(10rem);
   }
 
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
   }
 
   100% {
@@ -119,7 +128,7 @@ body {
 
 @keyframes moveInBottom {
   0% {
-    transform: translateY(100px);
+    transform: translateY(10rem);
     opacity: 0;
   }
   100% {
@@ -134,8 +143,8 @@ body {
   text-transform: uppercase;
   text-decoration: none;
 
-  padding: 15px 40px;
-  border-radius: 100px;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
   display: inline-block;
 
   transition: all 0.2s;
@@ -147,14 +156,14 @@ body {
 
 .btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
 }
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
@@ -174,7 +183,7 @@ body {
   transition: all 0.4s;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: #fff;
 }
 
@@ -183,7 +192,7 @@ body {
   opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
