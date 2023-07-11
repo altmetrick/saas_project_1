@@ -1,5 +1,4 @@
 .row {
-  background-color: #eee;
   max-width: $grid-width;
   margin: 0 auto;
 
@@ -11,9 +10,6 @@
 
   // [class^="col-"]{} - selecting elements with class that starts with 'col-' using attribute selection;
   [class^='col-'] {
-    background-color: orangered;
-    color: $color-white;
-
     &:not(:last-child) {
       margin-right: $gater-horizontal;
     }
