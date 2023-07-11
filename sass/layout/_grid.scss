@@ -1,0 +1,47 @@
+.row {
+  background-color: #eee;
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  @include clearfix;
+
+  &:not(:last-child) {
+    margin-bottom: $gater-vertical;
+  }
+
+  // [class^="col-"]{} - selecting elements with class that starts with 'col-' using attribute selection;
+  [class^='col-'] {
+    background-color: orangered;
+    color: $color-white;
+
+    &:not(:last-child) {
+      margin-right: $gater-horizontal;
+    }
+    float: left;
+  }
+
+  .col-1-of-2 {
+    // use sass variables inside calc() using #{$your-var}
+    width: calc((100% - #{$gater-horizontal}) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - #{$gater-horizontal * 2}) / 3);
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - #{$gater-horizontal * 3}) / 4);
+  }
+
+  .col-2-of-3 {
+    width: calc(2 * ((100% - 2 *#{$gater-horizontal}) / 3) + #{$gater-horizontal});
+  }
+
+  .col-2-of-4 {
+    width: calc(2 * ((100% - #{$gater-horizontal * 3}) / 4) + #{$gater-horizontal});
+  }
+
+  .col-3-of-4 {
+    width: calc(3 * ((100% - #{$gater-horizontal * 3}) / 4) + 2 * #{$gater-horizontal});
+  }
+}
