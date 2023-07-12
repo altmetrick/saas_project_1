@@ -168,6 +168,36 @@ body {
   transform: translateY(0);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3); }
 
+.composition {
+  position: relative; }
+  .composition__photo {
+    z-index: 10;
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    transition: all 0.3s;
+    outline-offset: 1.5rem; }
+    .composition__photo:hover {
+      z-index: 11;
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.5);
+      outline: 1.5rem solid rgba(85, 197, 122, 0.8); }
+    .composition__photo--p1 {
+      position: absolute;
+      top: -2rem;
+      left: 0rem; }
+    .composition__photo--p2 {
+      position: absolute;
+      top: 2rem;
+      right: 0; }
+    .composition__photo--p3 {
+      position: absolute;
+      top: 10rem;
+      left: 20%; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5); }
+
 .header {
   position: relative;
   height: 95vh;
