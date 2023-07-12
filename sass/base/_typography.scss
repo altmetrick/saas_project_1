@@ -57,3 +57,18 @@ body {
     text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.3);
   }
 }
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $color-grey-dark;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+  //use :not sudo class to select everything except (:last-child)
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
