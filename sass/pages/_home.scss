@@ -25,3 +25,9 @@
   //but we want only section block to be skewed, so we need to 'unskew' direct children of this section
   // .section-features > * , '>' - direct child selector, * - select all
 }
+
+.section-tours {
+  background-color: $color-gray-light-1;
+  padding: 28rem 0;
+  margin-top: -10rem;
+}

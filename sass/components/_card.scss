@@ -1,0 +1,65 @@
+.card {
+  position: relative;
+
+  //to see perspective on a rotating element, wee need to specify it on its parent element
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  height: 50rem;
+
+  &__side {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+
+    height: 50rem;
+    transition: all 0.9s ease;
+
+    //back-face - The back face of an element is a mirror image of the front face being displayed. This property is useful when an element is rotated
+    backface-visibility: hidden;
+
+    border-radius: 5px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(-180deg);
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+
+  //to hover on a parent and animate only its child, use: .parent:hover .child{ rules here will apply only the child }
+  //.card:hover .card__side {}
+  &:hover &__side--front {
+    transform: rotateY(180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+}
