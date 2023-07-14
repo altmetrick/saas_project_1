@@ -13,6 +13,7 @@ body {
   color: $color-white;
   text-transform: uppercase;
 
+  //backface-visibility: hidden - use to prevent little movement after end of the animation
   backface-visibility: hidden;
   margin-bottom: 5rem;
 
