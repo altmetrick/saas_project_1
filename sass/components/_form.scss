@@ -49,7 +49,7 @@
   // using input:placeholder-shown we can manipulate visibility of input's label
   // so when input is empty (and placeholder is shown) we want to hide the label
   // and show it (label) when input is not empty
-  // so in order to apply rules when input is empty we need to use the 'adjacent sibling combinator' +
+  // so in order to apply rules when input is empty we need to use the 'adjacent sibling combinator +'
   // to select the label
 
   &__input:placeholder-shown + &__label {
@@ -59,6 +59,7 @@
   }
 
   //Radio buttons
+
   //in order to style radio btn, we need to hide basic html radio-button and create our own
   &__radio-input {
     visibility: hidden;
