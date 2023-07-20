@@ -47,6 +47,7 @@
     left: 0;
 
     //display: none;
+    visibility: hidden;
     width: 0;
     opacity: 0;
 
@@ -107,6 +108,7 @@
   }
 
   &__checkbox:checked ~ &__nav {
+    visibility: visible;
     opacity: 1;
     width: 100%;
   }
