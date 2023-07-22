@@ -4,16 +4,35 @@
 
   @include clearfix;
 
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+
   &:not(:last-child) {
     margin-bottom: $gater-vertical;
+
+    @include respond(tab-port) {
+      margin-bottom: $gater-vertical-small;
+    }
   }
 
   // [class^="col-"]{} - selecting elements with class that starts with 'col-' using attribute selection;
   [class^='col-'] {
+    float: left;
+
     &:not(:last-child) {
       margin-right: $gater-horizontal;
+
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gater-vertical-small;
+      }
     }
-    float: left;
+
+    @include respond(tab-port) {
+      width: 100% !important;
+    }
   }
 
   .col-1-of-2 {
