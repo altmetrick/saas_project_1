@@ -77,6 +77,7 @@
     background-blend-mode: screen;
 
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 
@@ -194,5 +195,60 @@
   &__price-value {
     font-size: 6rem;
     font-weight: 100;
+  }
+
+  //When we need to change a lot of styles in media-queries it's a lot easier first
+  // to copy and paste all existing styles in to a query and then delete styles that
+  // we don't need and add new styles specific to a query
+
+  @include respond(tab-port) {
+    height: auto;
+    background-color: $color-white;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+    &__side {
+      position: relative;
+      height: auto;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0deg);
+        // margin-top: -6rem;
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        border-top-right-radius: 0px;
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &__details {
+      padding: 1rem 3rem;
+    }
+
+    //Back side styling
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
+    }
+
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+
+    &__price-only {
+      font-size: 1.5rem;
+    }
+
+    &__price-value {
+      font-size: 4rem;
+      font-weight: 100;
+    }
   }
 }

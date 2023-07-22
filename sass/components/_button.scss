@@ -15,6 +15,11 @@
     //change for <button> element
     border: none;
     cursor: pointer;
+
+    @include respond(phone) {
+      font-size: $font-size-small;
+      padding: 1rem 2rem;
+    }
   }
 
   &::after {
