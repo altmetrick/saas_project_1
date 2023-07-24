@@ -17,6 +17,7 @@
 
     //back-face - The back face of an element is a mirror image of the front face being displayed. This property is useful when an element is rotated
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 
     //as child image (.card__picture) overflows its parent, we won't be able to see border-radius: 5px, to avoid this use overflow: hidden on parent
     overflow: hidden;
