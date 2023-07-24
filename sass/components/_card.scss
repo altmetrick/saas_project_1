@@ -202,7 +202,11 @@
   // to copy and paste all existing styles in to a query and then delete styles that
   // we don't need and add new styles specific to a query
 
-  @include respond(tab-port) {
+  // @include respond(tab-port) {
+
+  // wee need to specify media query to identify if devise had ability to hover,
+  // for exm, we can't hover over elements on large iPad, tablet...
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
     height: auto;
     background-color: $color-white;
     border-radius: 3px;
